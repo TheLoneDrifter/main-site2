@@ -34,16 +34,16 @@
 
 /* Custom slime glow effects */
 .drop-shadow-glow-slimetch {
-  filter: drop-shadow(0 0 10px rgba(0, 212, 170, 0.7));
+  filter: drop-shadow(0 0 10px rgba(57, 68, 188, 0.7));
 }
 
 /* Enhanced pulse animation for slime theme */
 @keyframes pulse-glow-slimetch {
   0%, 100% {
-    filter: drop-shadow(0 0 10px rgba(0, 212, 170, 0.7));
+    filter: drop-shadow(0 0 10px rgba(57, 68, 188, 0.7));
   }
   50% {
-    filter: drop-shadow(0 0 20px rgba(0, 212, 170, 0.9));
+    filter: drop-shadow(0 0 20px rgba(57, 68, 188, 0.9));
   }
 }
 
@@ -85,8 +85,8 @@
 
 .glass-card-3d:hover {
   transform: rotateY(-5deg) translateZ(20px) scale(1.02) translateY(-4px);
-  box-shadow: 0 16px 64px 0 rgba(0, 212, 170, 0.2), inset 0 1px 0 rgba(255, 255, 255, 0.2);
-  border-color: rgba(0, 212, 170, 0.3);
+  box-shadow: 0 16px 64px 0 rgba(57, 68, 188, 0.2), inset 0 1px 0 rgba(255, 255, 255, 0.2);
+  border-color: rgba(57, 68, 188, 0.3);
   z-index: 10;
   position: relative;
 }
@@ -115,24 +115,24 @@
 }
 
 .ios-button {
-  background: linear-gradient(135deg, #00d4aa 0%, #00a888 100%);
+  background: linear-gradient(135deg, #3944BC 0%, #2D3561 100%);
   border: none;
   border-radius: 12px;
   color: white;
   font-weight: 600;
   padding: 12px 24px;
   transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
-  box-shadow: 0 4px 16px 0 rgba(0, 212, 170, 0.3);
+  box-shadow: 0 4px 16px 0 rgba(57, 68, 188, 0.3);
 }
 
 .ios-button:hover {
   transform: translateY(-2px);
-  box-shadow: 0 8px 32px 0 rgba(0, 212, 170, 0.4);
+  box-shadow: 0 8px 32px 0 rgba(57, 68, 188, 0.4);
 }
 
 .ios-button:active {
   transform: translateY(0px);
-  box-shadow: 0 2px 8px 0 rgba(0, 212, 170, 0.3);
+  box-shadow: 0 2px 8px 0 rgba(57, 68, 188, 0.3);
 }
 
 .ios-surface {

@@ -3,40 +3,8 @@ import './App.css';
 
 function App() {
   const currentYear = new Date().getFullYear();
-  const [fileSize, setFileSize] = useState<string>('');
-
-  useEffect(() => {
-    const fetchFileSize = async () => {
-      try {
-        const response = await fetch('./SlimeTECH.jar', { method: 'HEAD' });
-        if (response.ok) {
-          const size = response.headers.get('content-length');
-          if (size) {
-            const fileSizeInBytes = parseInt(size);
-            const fileSizeInMB = (fileSizeInBytes / (1024 * 1024)).toFixed(1);
-            setFileSize(`${fileSizeInMB} MB`);
-          }
-        }
-      } catch (error) {
-        // Fallback if file doesn't exist or network error
-        setFileSize('Unknown size');
-      }
-    };
-
-    fetchFileSize();
-  }, []);
-
   const handleBannerClick = () => {
     window.open('https://galactiq.net/', '_blank');
-  };
-
-  const handleDownload = () => {
-    // Create a sample download for demonstration
-    // In a real scenario, this would link to the actual SlimeTECH download
-    const element = document.createElement('a');
-    element.href = './SlimeTECH.jar'; // Replace with actual download URL
-    element.download = 'SlimeTECH.jar';
-    element.click();
   };
 
   return (
@@ -63,9 +31,9 @@ function App() {
           </p>
           <div className="max-w-3xl mx-auto">
             <p className="ios-text-tertiary text-lg leading-relaxed">
-              Enhance your Minecraft server with SlimeTECH, a powerful Slimefun 4 fork. 
-              Access hundreds of new items, machines, and gameplay mechanics to transform 
-              your server into an industrial powerhouse.
+              Experience SlimeTECH, a completely independent Minecraft plugin. 
+              While inspired by similar concepts, we've coded everything from scratch 
+              to create a unique industrial experience for your server.
             </p>
           </div>
         </section>
@@ -76,40 +44,40 @@ function App() {
             <h2 className="text-3xl md:text-4xl font-bold text-center mb-8 ios-text-primary">
               Download SlimeTECH
             </h2>
-            
-            <div className="grid md:grid-cols-2 gap-8 mb-8">
-              <div className="text-center">
-                <div className="ios-surface rounded-2xl p-6 mb-4 border border-ios-separator">
-                  <h3 className="text-xl font-semibold mb-2 ios-text-secondary">Minecraft Plugin</h3>
-                  <p className="ios-text-tertiary mb-4">Requires Spigot/Paper server</p>
-                  <div className="text-sm ios-text-tertiary">
-                    Version 1.0 • Size: {fileSize || 'Calculating...'}
-                  </div>
-                </div>
-              </div>
-              
-              <div className="text-center">
-                <div className="ios-surface rounded-2xl p-6 mb-4 border border-ios-separator">
-                  <h3 className="text-xl font-semibold mb-2 ios-text-secondary">Requirements</h3>
-                  <ul className="ios-text-tertiary text-sm space-y-1">
-                    <li>• Minecraft Server 1.16+</li>
-                    <li>• Spigot/Paper fork</li>
-                    <li>• Java 8 or higher</li>
-                    <li>• 2GB+ RAM recommended</li>
-                    <li>• Slimefun 4 compatible</li>
-                  </ul>
+
+            <div className="text-center mt-8">
+              <h3 className="text-xl font-semibold mb-4 ios-text-secondary">All Versions</h3>
+              <div className="ios-surface rounded-2xl p-6 mb-4 border border-ios-separator max-w-2xl mx-auto">
+                <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
+                  {[
+                    { version: 'v0.0.1', date: '2026-02-07' }
+                  ].map((version, index) => (
+                    <button
+                      key={index}
+                      onClick={() => window.open(`https://github.com/Voltarian-Technologies/SlimeTECH1/releases/tag/${version.version}`, '_blank')}
+                      className="rounded-lg p-3 text-left hover:bg-slimetch-primary/10 transition-colors duration-200"
+                    >
+                      <div className="ios-text-secondary text-sm font-semibold">{version.version}</div>
+                      <div className="ios-text-tertiary text-xs">{version.date}</div>
+                    </button>
+                  ))}
                 </div>
               </div>
             </div>
 
-            <div className="text-center">
-              <button
-                onClick={handleDownload}
-                className="ios-button text-lg px-12 py-4 text-white font-semibold rounded-2xl shadow-ios-card hover:shadow-ios-card-hover transform hover:scale-105 transition-all duration-300"
-              >
-                Download Now
-              </button>
-              <p className="ios-text-tertiary text-sm mt-4">
+            <div className="text-center mt-8">
+              <div className="ios-surface rounded-2xl p-6 mb-4 border border-ios-separator max-w-2xl mx-auto">
+                <h3 className="text-xl font-semibold mb-2 ios-text-secondary">Requirements</h3>
+                <ul className="ios-text-tertiary text-sm space-y-1">
+                  <li>• Minecraft Server 1.17+</li>
+                  <li>• Spigot/Paper fork</li>
+                  <li>• Java 16 or Higher</li>
+                  <li>• 1GB+ RAM (Optimized)</li>
+                  <li>• Not Slimefun 4 compatible</li>
+                  <li>• Standalone plugin</li>
+                </ul>
+              </div>
+              <p className="ios-text-tertiary text-sm">
                 Free to use • Open source • GPLv3 License
               </p>
             </div>
@@ -126,21 +94,21 @@ function App() {
             <div className="flex animate-scroll-3d transform-gpu">
               {/* First set of cards */}
               {[
-                { title: 'Slimefun Fork', desc: 'Enhanced Slimefun 4 with new features and improvements' },
+                { title: 'Independent Plugin', desc: 'Completely standalone - coded from scratch' },
+                { title: 'Java 16 or Higher', desc: 'Requires Java 16 or higher to run' },
                 { title: 'Hundreds of Items', desc: 'New machines, tools, and materials for your server' },
                 { title: 'Energy Systems', desc: 'Advanced power generation and distribution networks' },
                 { title: 'Auto-Crafting', desc: 'Automated crafting systems for complex recipes' },
                 { title: 'Cargo Management', desc: 'Smart item transport and sorting systems' },
                 { title: 'Enhanced GUIs', desc: 'Improved user interfaces for better usability' },
-                { title: 'Performance Optimized', desc: 'Reduced lag and improved server performance' },
-                { title: 'Regular Updates', desc: 'Continuous development with new content' },
-                { title: 'Community Driven', desc: 'Open source with community contributions' },
+                { title: 'Performance Optimized', desc: 'Runs well on servers with 1GB RAM' },
+                { title: '1.0.0 Updates', desc: 'Updates follow semantic versioning format' },
+                { title: 'Moving Away from Slimefun', desc: 'Developing independent identity' },
                 { title: 'Cross-Platform', desc: 'Works with Spigot, Paper, and their forks' },
                 { title: 'Easy Installation', desc: 'Simple setup with detailed documentation' },
                 { title: 'Extensible API', desc: 'Plugin API for custom addons and integrations' },
                 { title: 'Multi-Language', desc: 'Support for multiple server languages' },
-                { title: 'Backup Compatible', desc: 'Works with existing Slimefun worlds' },
-                { title: 'Active Support', desc: 'Discord community for help and suggestions' }
+                { title: 'Backup Compatible', desc: 'Works with existing server worlds' }
               ].map((feature, index) => (
                 <div key={`first-${index}`} className="glass-card-3d rounded-2xl p-6 mx-4 min-w-[280px] flex-shrink-0 transform-gpu">
                   <div className="w-12 h-12 bg-gradient-to-br from-slimetch-primary to-slimetch-primary/50 rounded-lg mb-4 flex items-center justify-center">
@@ -153,21 +121,21 @@ function App() {
               
               {/* Duplicate set for seamless scrolling */}
               {[
-                { title: 'Slimefun Fork', desc: 'Enhanced Slimefun 4 with new features and improvements' },
+                { title: 'Independent Plugin', desc: 'Completely standalone - coded from scratch' },
+                { title: 'Java 16 or Higher', desc: 'Requires Java 16 or higher to run' },
                 { title: 'Hundreds of Items', desc: 'New machines, tools, and materials for your server' },
                 { title: 'Energy Systems', desc: 'Advanced power generation and distribution networks' },
                 { title: 'Auto-Crafting', desc: 'Automated crafting systems for complex recipes' },
                 { title: 'Cargo Management', desc: 'Smart item transport and sorting systems' },
                 { title: 'Enhanced GUIs', desc: 'Improved user interfaces for better usability' },
-                { title: 'Performance Optimized', desc: 'Reduced lag and improved server performance' },
-                { title: 'Regular Updates', desc: 'Continuous development with new content' },
-                { title: 'Community Driven', desc: 'Open source with community contributions' },
+                { title: 'Performance Optimized', desc: 'Runs well on servers with 1GB RAM' },
+                { title: '1.0.0 Updates', desc: 'Updates follow semantic versioning format' },
+                { title: 'Moving Away from Slimefun', desc: 'Developing independent identity' },
                 { title: 'Cross-Platform', desc: 'Works with Spigot, Paper, and their forks' },
                 { title: 'Easy Installation', desc: 'Simple setup with detailed documentation' },
                 { title: 'Extensible API', desc: 'Plugin API for custom addons and integrations' },
                 { title: 'Multi-Language', desc: 'Support for multiple server languages' },
-                { title: 'Backup Compatible', desc: 'Works with existing Slimefun worlds' },
-                { title: 'Active Support', desc: 'Discord community for help and suggestions' }
+                { title: 'Backup Compatible', desc: 'Works with existing server worlds' }
               ].map((feature, index) => (
                 <div key={`second-${index}`} className="glass-card-3d rounded-2xl p-6 mx-4 min-w-[280px] flex-shrink-0 transform-gpu">
                   <div className="w-12 h-12 bg-gradient-to-br from-slimetch-primary to-slimetch-primary/50 rounded-lg mb-4 flex items-center justify-center">
