@@ -6,11 +6,11 @@ module.exports = {
   theme: {
     extend: {
       colors: {
-        'ios-primary': '#FF3B30',
-        'ios-secondary': '#FF3B30',
+        'ios-primary': '#3944BC',
+        'ios-secondary': '#3944BC',
         'ios-success': '#34C759',
         'ios-warning': '#FF9500',
-        'ios-error': '#FF3B30',
+        'ios-error': '#3944BC',
         'ios-background': '#000000',
         'ios-surface': '#1C1C1E',
         'ios-surface-secondary': '#2C2C2E',
