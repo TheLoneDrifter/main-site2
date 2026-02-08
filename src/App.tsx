@@ -49,7 +49,7 @@ function App() {
               <div className="ios-surface rounded-2xl p-6 mb-4 border border-ios-separator max-w-2xl mx-auto">
                 <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
                   {[
-                    { version: 'v0.0.1', date: '2026-02-07' }
+                    { version: 'v0.0.1 Development', date: '2026-02-08' }
                   ].map((version, index) => (
                     <button
                       key={index}
