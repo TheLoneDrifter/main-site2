@@ -1,0 +1,161 @@
+.App {
+  text-align: center;
+}
+
+.App-logo {
+  height: 40vmin;
+  pointer-events: none;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .App-logo {
+    animation: App-logo-spin infinite 20s linear;
+  }
+}
+
+.App-header {
+  background-color: #282c34;
+  padding: 20px;
+  color: white;
+}
+
+.App-link {
+  color: #61dafb;
+}
+
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* Custom slime glow effects */
+.drop-shadow-glow-slimetch {
+  filter: drop-shadow(0 0 10px rgba(0, 212, 170, 0.7));
+}
+
+/* Enhanced pulse animation for slime theme */
+@keyframes pulse-glow-slimetch {
+  0%, 100% {
+    filter: drop-shadow(0 0 10px rgba(0, 212, 170, 0.7));
+  }
+  50% {
+    filter: drop-shadow(0 0 20px rgba(0, 212, 170, 0.9));
+  }
+}
+
+.animate-pulse-glow-slimetch {
+  animation: pulse-glow-slimetch 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+}
+
+/* iOS 26 Glassmorphism Effects */
+.glass-card {
+  background: rgba(28, 28, 30, 0.72);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 20px;
+  box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.12), inset 0 1px 0 rgba(255, 255, 255, 0.1);
+}
+
+.glass-card-hover {
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.glass-card-hover:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 48px 0 rgba(0, 0, 0, 0.18), inset 0 1px 0 rgba(255, 255, 255, 0.15);
+  border-color: rgba(255, 255, 255, 0.2);
+}
+
+.glass-card-3d {
+  background: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 16px;
+  box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37), inset 0 1px 0 rgba(255, 255, 255, 0.15);
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  transform-style: preserve-3d;
+  transform: rotateY(0deg) translateZ(0px);
+}
+
+.glass-card-3d:hover {
+  transform: rotateY(-5deg) translateZ(20px) scale(1.02) translateY(-4px);
+  box-shadow: 0 16px 64px 0 rgba(0, 212, 170, 0.2), inset 0 1px 0 rgba(255, 255, 255, 0.2);
+  border-color: rgba(0, 212, 170, 0.3);
+  z-index: 10;
+  position: relative;
+}
+
+.perspective-1000 {
+  perspective: 1000px;
+  transform-style: preserve-3d;
+}
+
+@keyframes scroll-3d {
+  0% {
+    transform: translateX(0) rotateY(0deg);
+  }
+  100% {
+    transform: translateX(-50%) rotateY(0deg);
+  }
+}
+
+.animate-scroll-3d {
+  animation: scroll-3d 30s linear infinite;
+  transform-style: preserve-3d;
+}
+
+.floating-element {
+  animation: float 3s ease-in-out infinite;
+}
+
+.ios-button {
+  background: linear-gradient(135deg, #00d4aa 0%, #00a888 100%);
+  border: none;
+  border-radius: 12px;
+  color: white;
+  font-weight: 600;
+  padding: 12px 24px;
+  transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+  box-shadow: 0 4px 16px 0 rgba(0, 212, 170, 0.3);
+}
+
+.ios-button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 32px 0 rgba(0, 212, 170, 0.4);
+}
+
+.ios-button:active {
+  transform: translateY(0px);
+  box-shadow: 0 2px 8px 0 rgba(0, 212, 170, 0.3);
+}
+
+.ios-surface {
+  background: rgba(28, 28, 30, 0.8);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.ios-text-primary {
+  color: #FFFFFF;
+  font-weight: 600;
+  letter-spacing: -0.02em;
+}
+
+.ios-text-secondary {
+  color: #EBEBF5;
+  font-weight: 400;
+  opacity: 0.8;
+}
+
+.ios-text-tertiary {
+  color: #EBEBF5;
+  font-weight: 400;
+  opacity: 0.6;
+}
