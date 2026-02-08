@@ -8,7 +8,7 @@ function App() {
   useEffect(() => {
     const fetchFileSize = async () => {
       try {
-        const response = await fetch('./slimetch.jar', { method: 'HEAD' });
+        const response = await fetch('./SlimeTECH.jar', { method: 'HEAD' });
         if (response.ok) {
           const size = response.headers.get('content-length');
           if (size) {
@@ -34,7 +34,7 @@ function App() {
     // Create a sample download for demonstration
     // In a real scenario, this would link to the actual SlimeTECH download
     const element = document.createElement('a');
-    element.href = './slimetch.jar'; // Replace with actual download URL
+    element.href = './SlimeTECH.jar'; // Replace with actual download URL
     element.download = 'SlimeTECH.jar';
     element.click();
   };
